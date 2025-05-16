@@ -1,1 +1,5 @@
-# hypermart-checkout-system
+# Project Name
+* Hypermark Checkout System
+
+## About
+* 
