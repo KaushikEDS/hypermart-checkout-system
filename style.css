@@ -61,6 +61,12 @@ body {
     padding: 15px;
 }
 
+#counter-container {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
 .counter-header-container {
     display: flex;
     justify-content: space-between;
