@@ -75,6 +75,12 @@ body {
     color: gray;
 }
 
+.item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .item {
     display: flex;
     justify-content: space-between;
@@ -86,4 +92,10 @@ body {
 .item-count {
     display: flex;
     align-items: center;
+}
+
+.total-item-count {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 10px;
 }
