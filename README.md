@@ -12,6 +12,8 @@ I have created class "CounterBuilder" to handle one time operations needed to bu
 
 The tricky part is keeping the leftmost counter as minCounter, It took me a while to figure out. My goal is to not keep multiple loops to find it.
 
+I thought to add a feature whenever we press enter on input field it would checkout, but I didnt do it because it would render the Checkout button meaningless. Also it wasnt specified anywhere that this needed to be done.
+
 
 
 

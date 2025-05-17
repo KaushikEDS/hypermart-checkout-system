@@ -5,6 +5,7 @@ class Counter {
         this.counter = builder.getCounter();
         this.itemContainer = this.counter.querySelector('.item-container');
         this.customerCount = this.counter.querySelector(`#customer-count-${this.index}`);
+        this.totalItemContainer = this.counter.querySelector(`#total-item-count-${this.index}`);
         counterContainer.appendChild(this.counter);
     }
 
@@ -21,11 +22,17 @@ class Counter {
         let totalItems = 0;
         this.itemContainer.childNodes.forEach(x => (totalItems += parseInt(x.getAttribute('data-item-count'))));
         this.counter.setAttribute('data-total-items', totalItems);
+        this.totalItemContainer.textContent = `Total items: ${totalItems}`;
         return totalItems;
     }
 
     calculateCustomerCount() {
-        this.customerCount.textContent = `${this.totalItemCount} Customers`;
+        const customerCount = this.itemContainer.childNodes.length;
+        if(customerCount !== 1) {
+            this.customerCount.textContent = customerCount + ' Customers';
+        } else {
+            this.customerCount.textContent = customerCount + ' Customer';
+        }
     }
 }
 
@@ -41,6 +48,7 @@ class CounterBuilder {
         counter.classList.add('counter');
         counter.appendChild(this.getCounterHeaderContainer());
         counter.appendChild(this.getItemContainer());
+        counter.appendChild(this.getTotalItemCount());
         return counter;
     }
 
@@ -74,6 +82,14 @@ class CounterBuilder {
         const itemContainer = document.createElement('div');
         itemContainer.classList.add('item-container');
         return itemContainer;
+    }
+
+    getTotalItemCount() {
+        const totalItemCount = document.createElement('div');
+        totalItemCount.classList.add('total-item-count');
+        totalItemCount.id = `total-item-count-${this.index}`;
+        totalItemCount.textContent = `Total items: 0`;
+        return totalItemCount;
     }
 }
 
