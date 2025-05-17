@@ -14,7 +14,6 @@ body {
     gap: 25px;
 }
 
-
 .subtitle {
     font-size: 1.2rem;
     font-weight: 400;
@@ -60,12 +59,14 @@ body {
     width: 100%;
     border-radius: 5px;
     padding: 15px;
+    flex: 1 1 30%;
 }
 
 #counter-container {
     display: flex;
     gap: 10px;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .counter-header-container {
@@ -105,4 +106,15 @@ body {
     font-size: 12px;
     text-align: center;
     margin-top: 10px;
+}
+
+.remove-item {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+    padding: 0;
+    line-height: 1;
+    padding: 0 10px;
 }
