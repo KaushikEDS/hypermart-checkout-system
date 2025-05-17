@@ -10,7 +10,7 @@ class Counter {
     }
 
     get totalItemCount() {
-        return parseInt(this.counter.getAttribute('data-total-items'));
+        return +this.counter.getAttribute('data-total-items');
     }
 
     update() {
@@ -20,8 +20,8 @@ class Counter {
 
     calculateTotalItems() {
         let totalItems = 0;
-        this.itemContainer.childNodes.forEach(x => (totalItems += parseInt(x.getAttribute('data-item-count'))));
-        this.counter.setAttribute('data-total-items', totalItems);
+        this.itemContainer.childNodes.forEach(x => (totalItems += +x.getAttribute('data-item-count')));
+        this.counter.setAttribute('data-total-items', `${totalItems}`);
         this.totalItemContainer.textContent = `Total items: ${totalItems}`;
         return totalItems;
     }
