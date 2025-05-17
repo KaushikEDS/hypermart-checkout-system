@@ -36,14 +36,14 @@ body {
     gap: 15px;
 }
 
-.input-field {
+#input-field {
     padding: 10px;
     width: 250px;
     border: solid 1px gray;
     border-radius: 5px;
 }
 
-.checkout-button {
+#checkout-button {
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
